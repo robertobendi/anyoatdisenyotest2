@@ -1,13 +1,16 @@
-{% extends '@theme/layout.twig' %}
-{% set meta_description = entry.field('meta_description') %}
+{% extends "@theme/layout.twig" %}
 
-{% block title %}{{ entry.field('title') }} · {{ site.name }}{% endblock %}
+{% block title %}{{ entry.field('title') }} — Anyo at Disenyo{% endblock %}
+{% block meta_description %}{{ entry.field('meta_description', 'Anyo at Disenyo — architectural services in Batangas City.') }}{% endblock %}
+{% block body_class %}no-hero{% endblock %}
 
 {% block content %}
-<article class="wrap">
-    <h1>{{ entry.field('title') }}</h1>
-    <div class="article-body">
+<section class="section">
+    <article class="wrap prose">
+        <p class="eyebrow">Anyo at Disenyo</p>
+        <h1 class="h2" style="font-size: clamp(2.25rem,5vw,3.5rem); margin-bottom: 1.5rem;">{{ entry.field('title') }}</h1>
         {{ entry.field('body')|markdown }}
-    </div>
-</article>
+        <p style="margin-top:2.5rem;"><a class="pill" href="/contact">Get Your Brief <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+    </article>
+</section>
 {% endblock %}

@@ -1,0 +1,133 @@
+{% extends "@theme/layout.twig" %}
+
+{% block title %}Services — Anyo at Disenyo Architectural Services{% endblock %}
+{% block meta_description %}Architectural design, planning and permits, project development, and construction supervision in Batangas — and a clear, three-step path from first call to finished build.{% endblock %}
+{% block og_title %}What We Do — Anyo at Disenyo Services{% endblock %}
+
+{% block head %}
+<style>
+    .svc-block { display: grid; grid-template-columns: 1fr; gap: 1.5rem; align-items: center; padding-block: clamp(2rem, 4vw, 3.25rem); }
+    .svc-block + .svc-block { border-top: 1px solid var(--hairline); }
+    .svc-block .svc-copy { max-width: 46ch; }
+    .svc-block h3 { margin: 0 0 .6rem; font-size: clamp(1.4rem,2.4vw,1.75rem); }
+    .svc-block p { color: var(--ink-soft); margin: 0; }
+    .duo { position: relative; background: var(--walnut); overflow: hidden; border-radius: 3px; }
+    .duo::after { content: ""; position: absolute; inset: 0; background: var(--moss); mix-blend-mode: color; opacity: .28; pointer-events: none; }
+    .duo img { width: 100%; aspect-ratio: 3/2; object-fit: cover; display: block; filter: grayscale(1) contrast(1.08) brightness(1.04); mix-blend-mode: screen; opacity: .92; }
+
+    .steps { display: grid; grid-template-columns: 1fr; gap: 2.5rem; margin-top: 2.75rem; }
+    .step { min-width: 0; border-top: 2px solid var(--moss); padding-top: 1rem; }
+    .step .num { font-size: clamp(3.5rem, 8vw, 6rem); }
+    .step h3 { font-family: var(--serif); font-weight: 500; font-size: 1.3rem; margin: .4rem 0 .5rem; }
+    .step p { color: var(--ink-soft); margin: 0; font-size: .98rem; }
+
+    .cta-split { display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: center; }
+
+    @media (min-width: 760px) {
+        .svc-block { grid-template-columns: 1fr 1fr; gap: 3.25rem; }
+        .svc-block.reverse .svc-media { order: 2; }
+        .steps { grid-template-columns: repeat(3, 1fr); gap: 3rem; }
+    }
+    @media (min-width: 880px) {
+        .cta-split { grid-template-columns: 1.1fr 360px; gap: 4rem; }
+        .cta-split .callout { transform: translateX(-44px); position: relative; z-index: 3; }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="hero hero--band hero--drift" aria-label="Services">
+    <div class="hero__img"><img src="/uploads/int-studio.jpg" alt="Architect's studio with a drawing table and warm wood walls"></div>
+    <div class="hero__inner wrap">
+        <p class="eyebrow hero__eyebrow">Scope &amp; process</p>
+        <h1>What We Do</h1>
+    </div>
+</section>
+
+<section class="section">
+    <div class="wrap">
+        <p class="eyebrow reveal">Our services</p>
+        <h2 class="h2 reveal">Four ways we take a project forward</h2>
+
+        <div class="svc-block reveal" style="margin-top:1.5rem;">
+            <div class="svc-copy">
+                <p class="eyebrow eyebrow--ink">Service 01</p>
+                <h3 class="h3">Architectural Design</h3>
+                <p>We start with how you want to live, then shape it into form: floor plans, elevations, and the proportions and light that make a house feel like home. You'll see your home before a single block is laid.</p>
+            </div>
+            <div class="svc-media"><figure class="duo"><img src="/uploads/int-living.jpg" alt="Sunlit living space with warm materials"></figure></div>
+        </div>
+
+        <div class="svc-block reverse reveal">
+            <div class="svc-copy">
+                <p class="eyebrow eyebrow--ink">Service 02</p>
+                <h3 class="h3">Planning &amp; Permits</h3>
+                <p>Beautiful ideas still have to be buildable and approvable. We prepare the drawings and documentation your project needs to satisfy local requirements — so you spend less time at counters and more time building.</p>
+            </div>
+            <div class="svc-media"><figure class="duo"><img src="/uploads/int-kitchen.jpg" alt="Detailed built-in cabinetry in a renovated kitchen"></figure></div>
+        </div>
+
+        <div class="svc-block reveal">
+            <div class="svc-copy">
+                <p class="eyebrow eyebrow--ink">Service 03</p>
+                <h3 class="h3">Project Development</h3>
+                <p>From budgeting to material choices, we help turn approved plans into a realistic plan of action — so the leap from paper to site is steady, not stressful.</p>
+            </div>
+            <div class="svc-media"><figure class="duo"><img src="/uploads/ext-schweiker.jpg" alt="Modern home and studio under construction among trees"></figure></div>
+        </div>
+
+        <div class="svc-block reverse reveal">
+            <div class="svc-copy">
+                <p class="eyebrow eyebrow--ink">Service 04</p>
+                <h3 class="h3">Construction Supervision</h3>
+                <p>We stay on through the build, checking that what rises matches what we drew. It's the difference between a set of plans and a home you're proud to hand the keys of.</p>
+            </div>
+            <div class="svc-media"><figure class="duo"><img src="/uploads/int-hallway.jpg" alt="Interior hallway showing finished carpentry and daylight"></figure></div>
+        </div>
+    </div>
+</section>
+
+<hr class="rule">
+
+<!-- How a project starts: oversized step numerals -->
+<section class="section">
+    <div class="wrap">
+        <p class="eyebrow reveal">How a project starts</p>
+        <h2 class="h2 reveal">Three steps, no pressure</h2>
+        <div class="steps">
+            <div class="step reveal">
+                <span class="num">01</span>
+                <h3>Tell us your brief</h3>
+                <p>Send your lot details, budget range, and what you'd love to build. We reply with honest first thoughts.</p>
+            </div>
+            <div class="step reveal">
+                <span class="num">02</span>
+                <h3>We sketch &amp; scope</h3>
+                <p>We meet, walk the site if we can, and put early ideas and a clear scope on paper together.</p>
+            </div>
+            <div class="step reveal">
+                <span class="num">03</span>
+                <h3>We design &amp; build</h3>
+                <p>From permits to supervision, we stay with you until the home is standing and yours.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- espresso CTA card breaking the grid -->
+<section class="section">
+    <div class="wrap cta-split">
+        <div class="reveal">
+            <p class="eyebrow">Ready to begin</p>
+            <h2 class="h2">Start with step one</h2>
+            <p class="muted" style="margin-top:1rem; max-width: 38ch;">It costs nothing to tell us about your project — and it's the only way to find out what's possible.</p>
+        </div>
+        <aside class="callout reveal">
+            <p class="eyebrow eyebrow--light">Start here</p>
+            <p class="callout__lead">Tell us about your site.</p>
+            <p>A few details is all we need to give you a real, specific answer.</p>
+            <p style="margin-top:1.3rem;"><a class="pill" href="/contact">Get Your Brief <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+        </aside>
+    </div>
+</section>
+{% endblock %}

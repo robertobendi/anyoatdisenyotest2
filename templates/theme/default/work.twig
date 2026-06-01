@@ -1,0 +1,124 @@
+{% extends "@theme/layout.twig" %}
+
+{% block title %}Selected Work — Anyo at Disenyo Architectural Services{% endblock %}
+{% block meta_description %}A selection of homes and projects designed and developed by Anyo at Disenyo across Batangas — residential, renovation, and planning work, built and standing.{% endblock %}
+{% block og_title %}Selected Work — Anyo at Disenyo{% endblock %}
+
+{% block head %}
+<style>
+    .intro-line { max-width: 52ch; }
+    .work-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-top: 2.75rem; }
+    .work-item { min-width: 0; }
+    .work-item .frame { overflow: hidden; border-radius: 3px; background: var(--sand); box-shadow: 10px 12px 0 -2px rgba(138,106,77,.18); }
+    .work-item img { width: 100%; object-fit: cover; aspect-ratio: 4/3; transition: transform .45s ease; display: block; }
+    .work-item:hover img { transform: scale(1.04); }
+    .work-cap { margin-top: .85rem; }
+    .work-cap .name { font-family: var(--serif); font-size: 1.25rem; color: var(--ink); display: block; }
+    .work-cap .meta { font-size: .8125rem; text-transform: uppercase; letter-spacing: .08em; color: var(--taupe); margin-top: .3rem; display: block; }
+    .work-cap p { font-size: .95rem; color: var(--ink-soft); margin: .55rem 0 0; }
+
+    .band { position: relative; width: 100vw; margin-left: calc(50% - 50vw); min-height: clamp(300px, 42vw, 520px); display: flex; align-items: center; overflow: hidden; isolation: isolate; }
+    .band img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+    .band::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(20,18,15,.72) 0%, rgba(20,18,15,.3) 60%, rgba(20,18,15,.1) 100%); }
+    .band__cap { font-family: var(--serif); color: var(--paper); font-size: clamp(1.5rem, 3.6vw, 2.6rem); line-height: 1.18; max-width: 24ch; text-shadow: 0 2px 18px rgba(0,0,0,.4); }
+    .band__cap .eyebrow { color: #d8cdb6; }
+
+    .cta-split { display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: center; }
+
+    @media (min-width: 720px) {
+        .work-grid { grid-template-columns: repeat(6, 1fr); gap: 2rem 1.75rem; align-items: start; }
+        .wk-4 { grid-column: span 4; } .wk-3 { grid-column: span 3; } .wk-2 { grid-column: span 2; }
+        .wk-4 img { aspect-ratio: 16/10; } .wk-2 img { aspect-ratio: 3/4; } .wk-3 img { aspect-ratio: 4/3; }
+    }
+    @media (min-width: 880px) {
+        .cta-split { grid-template-columns: 1.1fr 360px; gap: 4rem; }
+        .cta-split .callout { transform: translateX(-44px); position: relative; z-index: 3; }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="hero hero--band hero--drift" aria-label="Selected work">
+    <div class="hero__img"><img src="/uploads/ext-jacobs2.jpg" alt="Modern single-storey residence with deep overhanging eaves in daylight"></div>
+    <div class="hero__inner wrap">
+        <p class="eyebrow hero__eyebrow">The portfolio</p>
+        <h1>Selected Work</h1>
+    </div>
+</section>
+
+<section class="section">
+    <div class="wrap">
+        <p class="eyebrow reveal">Built, and standing</p>
+        <h2 class="h2 reveal">Homes we drew, then helped build</h2>
+        <p class="intro-line muted reveal" style="margin-top:1rem;">A selection of recent residential and renovation work across Batangas. Every project here started the same way yours can — a conversation about a site, a budget, and a way of living.</p>
+
+        {% if entries is defined and entries|length > 0 %}
+        <div class="work-grid">
+            {% for e in entries %}
+            {% set span = ['wk-4','wk-2','wk-3','wk-3','wk-2','wk-4'][loop.index0 % 6] %}
+            <article class="work-item {{ span }} reveal">
+                <div class="frame"><img src="{{ e.field('cover_image', '/uploads/ext-jacobs1.jpg') }}" alt="{{ e.field('title', 'Project') }}{% if e.field('location') %} in {{ e.field('location') }}{% endif %}"></div>
+                <div class="work-cap">
+                    <span class="name">{{ e.field('title', 'Untitled project') }}</span>
+                    <span class="meta">{{ e.field('category', 'Project') }}{% if e.field('location') %} · {{ e.field('location') }}{% endif %}{% if e.field('year') %} · {{ e.field('year') }}{% endif %}</span>
+                    {% if e.field('description') %}<p>{{ e.field('description') }}</p>{% endif %}
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="work-grid">
+            <article class="work-item wk-4 reveal">
+                <div class="frame"><img src="/uploads/ext-jacobs1.jpg" alt="Single-storey home with deep eaves and a brick-and-timber facade in Batangas"></div>
+                <div class="work-cap"><span class="name">Hillside Family Residence</span><span class="meta">Residential · Batangas City · 2023</span><p>A compact three-bedroom home stepped into a sloping lot, with deep eaves for the afternoon sun.</p></div>
+            </article>
+            <article class="work-item wk-2 reveal">
+                <div class="frame"><img src="/uploads/int-living.jpg" alt="Bright open-plan living room opening onto a garden"></div>
+                <div class="work-cap"><span class="name">Open-Plan Interior</span><span class="meta">Residential · Lipa · 2024</span></div>
+            </article>
+            <article class="work-item wk-3 reveal">
+                <div class="frame"><img src="/uploads/ext-schweiker.jpg" alt="Low modern house and detached studio among mature trees"></div>
+                <div class="work-cap"><span class="name">Studio &amp; Annex</span><span class="meta">Renovation · Batangas City · 2022</span><p>A detached work studio added to an existing family home, matched to the original rooflines.</p></div>
+            </article>
+            <article class="work-item wk-3 reveal">
+                <div class="frame"><img src="/uploads/int-kitchen.jpg" alt="Warm wooden kitchen with built-in cabinetry"></div>
+                <div class="work-cap"><span class="name">Kitchen &amp; Dining Remodel</span><span class="meta">Renovation · Bauan · 2023</span><p>Reworked circulation and daylight for a family that cooks together.</p></div>
+            </article>
+            <article class="work-item wk-2 reveal">
+                <div class="frame"><img src="/uploads/ext-jacobs3.jpg" alt="Residence exterior detail with timber and masonry"></div>
+                <div class="work-cap"><span class="name">Corner Lot House</span><span class="meta">Residential · Batangas · 2021</span></div>
+            </article>
+            <article class="work-item wk-4 reveal">
+                <div class="frame"><img src="/uploads/int-hallway.jpg" alt="Sunlit hallway with wooden walls leading deeper into the home"></div>
+                <div class="work-cap"><span class="name">Coastal Weekend House</span><span class="meta">Residential · Mabini · 2024</span><p>A simple, breezy plan organised around a central sunlit spine.</p></div>
+            </article>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- full-bleed mid-page band -->
+<section class="band reveal" aria-label="Timber ceiling photograph">
+    <img src="/uploads/ceiling-timber.jpg" alt="Warm timber-framed vaulted ceiling seen from below">
+    <div class="wrap">
+        <p class="band__cap"><span class="eyebrow">Drawn to be built</span>Good structure should be worth looking up at.</p>
+    </div>
+</section>
+
+<!-- closing espresso CTA card breaking the grid -->
+<section class="section">
+    <div class="wrap cta-split">
+        <div class="reveal">
+            <p class="eyebrow">Your project next</p>
+            <h2 class="h2">Imagine yours here</h2>
+            <p class="muted" style="margin-top:1rem; max-width: 38ch;">The fastest way to find out what's possible on your lot is to tell us about it. We'll reply with honest, specific next steps.</p>
+        </div>
+        <aside class="callout reveal">
+            <p class="eyebrow eyebrow--light">Start here</p>
+            <p class="callout__lead">Tell us about your site.</p>
+            <p>Lot size, location, budget range, and what you'd love to build.</p>
+            <p style="margin-top:1.3rem;"><a class="pill" href="/contact">Get Your Brief <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+        </aside>
+    </div>
+</section>
+{% endblock %}

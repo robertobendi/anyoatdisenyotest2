@@ -1,11 +1,19 @@
-{% extends '@theme/layout.twig' %}
+{% extends "@theme/layout.twig" %}
 
-{% block title %}Not found · {{ site.name }}{% endblock %}
+{% block title %}Page Not Found — Anyo at Disenyo{% endblock %}
+{% block meta_description %}That page couldn't be found. Head back to Anyo at Disenyo's home page, or start your project brief.{% endblock %}
 
 {% block content %}
-<div class="wrap empty-state">
-    <h1>404</h1>
-    <p class="lede">That page doesn’t exist — or has been moved.</p>
-    <p><a href="/">Go home →</a></p>
-</div>
+<section class="hero hero--band" aria-label="Page not found">
+    <div class="hero__img"><img src="/uploads/ext-jacobs3.jpg" alt="Exterior of a warmly lit modern residence"></div>
+    <div class="hero__inner wrap">
+        <p class="eyebrow hero__eyebrow">Error 404</p>
+        <h1>Off the Plan</h1>
+        <p class="hero__sub">This page doesn't exist — or has moved. Let's get you back to solid ground.</p>
+        <p class="hero__cta" style="display:flex; gap:.75rem; flex-wrap:wrap;">
+            <a class="pill" href="/">Back home <span class="arrow" aria-hidden="true">&rarr;</span></a>
+            <a class="pill pill--ghost" href="/contact">Get Your Brief</a>
+        </p>
+    </div>
+</section>
 {% endblock %}
