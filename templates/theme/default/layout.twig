@@ -400,6 +400,8 @@
             <div class="footer-bottom">
                 <span>© {{ "now"|date('Y') }} Anyo at Disenyo — Architectural Services.</span>
                 <span>PRC-licensed architectural practice · Batangas City, PH</span>
+                {# Keeps the branded 404 page in the link-driven static export crawl. #}
+                <a href="/404" rel="nofollow" aria-hidden="true" tabindex="-1" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;">Page not found</a>
             </div>
         </div>
     </footer>

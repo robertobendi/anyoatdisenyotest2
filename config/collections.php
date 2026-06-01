@@ -101,6 +101,26 @@ return [
         ],
     ],
 
+    // Branded 404. Registers a crawlable /404 list route so the static export
+    // captures the themed 404.twig (with its hero photo) as docs/404.html — the
+    // link-driven crawler skips orphan pages, so without this route the export
+    // falls back to a generic image-less 404. GitHub Pages serves /404.html on
+    // any not-found.
+    'errorpage' => [
+        'label'          => '404 Page',
+        'label_singular' => '404 Page',
+        'icon'           => 'alert-triangle',
+        'route'          => '/404/{slug}',
+        'template'       => 'page.twig',
+        'list_template'  => '404.twig',
+        'order_by'       => 'updated_at DESC',
+        'fields' => [
+            'title' => ['type' => 'text', 'required' => true, 'label' => 'Title'],
+            'slug'  => ['type' => 'slug', 'required' => true, 'label' => 'Slug'],
+            'body'  => ['type' => 'markdown', 'label' => 'Body'],
+        ],
+    ],
+
     // Public submission endpoint at POST /forms/contact (kept for the admin
     // inbox). The public Contact page primarily posts to Formspree per the
     // brief, with this as a self-hosted fallback if the user wires it up.
