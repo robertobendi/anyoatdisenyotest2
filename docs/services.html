@@ -185,18 +185,39 @@
         /* no-hero pages: solid header even without JS */
         body.no-hero .site-header { background: var(--beige); box-shadow: 0 1px 0 var(--hairline); }
         body.no-hero .site-header::before { opacity: 0; }
-        body.no-hero .brand-name, body.no-hero .site-nav a, body.no-hero .menu-toggle { color: var(--espresso); }
+        body.no-hero .site-nav a, body.no-hero .menu-toggle { color: var(--espresso); }
 
-        .brand { display: flex; align-items: center; gap: .6rem; text-decoration: none; }
-        .brand-mark { width: 84px; height: 40px; overflow: hidden; display: block; flex: none; border-radius: 3px; }
-        .brand-mark img { width: 84px; height: 84px; display: block; margin-top: -14px; object-fit: cover; }
-        .brand-name {
-            font-family: var(--sans); font-weight: 600; font-size: .78rem;
-            letter-spacing: .12em; text-transform: uppercase; line-height: 1.1;
-            color: var(--paper);
+        /* brand lock-up: monogram badge + two-line wordmark */
+        .brand { display: flex; align-items: center; gap: .7rem; text-decoration: none; }
+        .brand-mark {
+            position: relative; width: 90px; height: 50px; flex: none;
+            border-radius: 11px; overflow: hidden; isolation: isolate;
+            background: var(--paper);
+            box-shadow: inset 0 0 0 1px var(--hairline), 0 2px 9px rgba(42,38,32,.16);
+            transition: box-shadow .25s ease;
         }
-        .site-header.scrolled .brand-name { color: var(--espresso); }
-        @media (max-width: 600px) { .brand-name { display: none; } }
+        .brand-mark img {
+            position: absolute; max-width: none;
+            width: 114px; height: 114px; left: -12px; top: -24px;
+            mix-blend-mode: multiply;
+        }
+        .site-header.scrolled .brand-mark { box-shadow: inset 0 0 0 1px var(--hairline), 0 1px 4px rgba(42,38,32,.10); }
+        .brand:hover .brand-mark { box-shadow: inset 0 0 0 1px var(--walnut), 0 5px 14px rgba(42,38,32,.20); }
+
+        .brand-text { display: flex; flex-direction: column; line-height: 1.04; }
+        .brand-text .nm {
+            font-family: var(--sans); font-weight: 600; font-size: .82rem;
+            letter-spacing: .15em; text-transform: uppercase; color: var(--paper);
+            transition: color .25s ease;
+        }
+        .brand-text .sub {
+            font-family: var(--sans); font-weight: 500; font-size: .58rem;
+            letter-spacing: .24em; text-transform: uppercase; color: #cdc1a8;
+            margin-top: 4px; transition: color .25s ease;
+        }
+        .site-header.scrolled .brand-text .nm, body.no-hero .brand-text .nm { color: var(--espresso); }
+        .site-header.scrolled .brand-text .sub, body.no-hero .brand-text .sub { color: var(--taupe); }
+        @media (max-width: 600px) { .brand-text { display: none; } }
 
         .nav-wrap { display: flex; align-items: center; gap: clamp(1rem, 2.5vw, 2rem); }
         .site-nav { display: flex; align-items: center; gap: clamp(1rem, 2.2vw, 1.9rem); }
@@ -294,8 +315,9 @@
             grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) minmax(0, 1fr);
         }
         .footer-logo img {
-            width: clamp(140px, 30vw, 170px); height: auto;
-            background: var(--paper); border-radius: 10px; padding: 12px;
+            width: clamp(132px, 28vw, 156px); height: auto;
+            background: var(--paper); border-radius: 14px; padding: 16px 18px;
+            box-shadow: 0 12px 32px rgba(0,0,0,.24);
         }
         .footer-tag { margin-top: 1.1rem; font-family: var(--serif); font-size: 1.05rem; color: var(--sand); max-width: 30ch; }
         .footer-col h3 {
@@ -386,7 +408,10 @@
     <header class="site-header" id="siteHeader">
         <a class="brand" href="/anyoatdisenyotest2/" aria-label="Anyo at Disenyo — home">
             <span class="brand-mark"><img width="500" height="500" src="/anyoatdisenyotest2/uploads/logo.jpg" alt="Anyo at Disenyo interlocking 'ad' loop monogram"></span>
-            <span class="brand-name">Anyo at Disenyo</span>
+            <span class="brand-text">
+                <span class="nm">Anyo at Disenyo</span>
+                <span class="sub">Architectural Services</span>
+            </span>
         </a>
         <div class="nav-wrap">
             <button class="menu-toggle" aria-controls="primary-nav" aria-expanded="false">
