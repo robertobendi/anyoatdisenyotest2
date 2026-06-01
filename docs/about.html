@@ -381,8 +381,10 @@
     }
 
     .principal { display: grid; grid-template-columns: 1fr; gap: 2.25rem; align-items: center; }
-    .principal .frame { overflow: hidden; border-radius: 3px; background: var(--sand); box-shadow: 12px 14px 0 -2px rgba(138,106,77,.20); }
-    .principal img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; }
+    .principal .frame { position: relative; overflow: hidden; border-radius: 3px; background: var(--sand); box-shadow: 12px 14px 0 -2px rgba(138,106,77,.20), 0 18px 42px rgba(42,38,32,.14); }
+    .principal .frame::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(150deg, rgba(110,112,68,.12), rgba(42,38,32,.06) 60%); mix-blend-mode: multiply; }
+    .principal img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; filter: saturate(1.05) contrast(1.03); transition: transform .55s ease; }
+    .principal .frame:hover img { transform: scale(1.035); }
     .principal .copy { max-width: 50ch; }
     .principal h3 { margin: 0 0 .6rem; }
     .principal p { color: var(--ink-soft); }
