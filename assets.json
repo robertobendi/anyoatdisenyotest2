@@ -1,0 +1,21 @@
+{
+  "logo": {
+    "source": "source/images/og-image.jpg",
+    "uploaded": "uploads/logo.jpg",
+    "url": "/uploads/logo.jpg",
+    "role": "logo",
+    "width": 500,
+    "height": 500,
+    "note": "near-square → ideal header logo"
+  },
+  "favicon": {
+    "source": "source/images/favicon.ico",
+    "uploaded": "uploads/favicon.ico",
+    "url": "/uploads/favicon.ico",
+    "role": "favicon",
+    "width": null,
+    "height": null,
+    "note": "set as <link rel=\"icon\"> in <head>"
+  },
+  "photos": []
+}
