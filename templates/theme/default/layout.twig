@@ -39,7 +39,8 @@
             --s5: 3rem;   --s6: 4.5rem; --s7: 7rem;
             --max: 1180px;
             --gutter: clamp(1.15rem, 4vw, 2.5rem);
-            --hairline: rgba(138,106,77,.35); /* walnut, low opacity */
+            --hairline: rgba(138,106,77,.5); /* walnut hairline — visible warm rule */
+            --link:     #54562f;   /* darkened moss for AA-contrast body links */
             --header-h: 70px;
         }
 
@@ -69,7 +70,7 @@
         }
         p { margin: 0 0 1.15em; }
         p:last-child { margin-bottom: 0; }
-        a { color: var(--moss); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+        a { color: var(--link); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
         a:hover { color: var(--olive); }
         img { max-width: 100%; height: auto; display: block; }
         strong { font-weight: 600; }
@@ -145,10 +146,10 @@
         a.text-link {
             font-family: var(--sans); font-weight: 600; font-size: .9rem;
             text-transform: uppercase; letter-spacing: .08em;
-            text-decoration: none; color: var(--moss);
-            border-bottom: 1.5px solid var(--moss); padding-bottom: 2px;
+            text-decoration: none; color: var(--link);
+            border-bottom: 1.5px solid var(--link); padding-bottom: 2px;
         }
-        a.text-link:hover { color: var(--olive); border-color: var(--olive); }
+        a.text-link:hover { color: var(--moss); border-color: var(--moss); }
 
         /* ---- skip link ---- */
         .skip-link {
@@ -385,7 +386,6 @@
                     <address>
                         Batangas City, Philippines<br>
                         <a href="https://www.facebook.com/anyoatdisenyo" target="_blank" rel="noopener">facebook.com/anyoatdisenyo</a>
-                        <!-- TODO: add the firm's real phone + email here once verified -->
                     </address>
                     <p style="color:#b7a98f;font-size:.85rem;">Send your project brief and we'll reply with next steps.</p>
                 </div>

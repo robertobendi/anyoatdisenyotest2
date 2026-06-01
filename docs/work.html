@@ -1,12 +1,11 @@
 <!doctype html>
 <html lang="en">
 <head>
-<style id="bismuth-img-reset">img,svg,video{max-width:100%;height:auto}</style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Selected Work — Anyo at Disenyo Architectural Services</title>
     <meta name="description" content="A selection of homes and projects designed and developed by Anyo at Disenyo across Batangas — residential, renovation, and planning work, built and standing.">
-    <link rel="icon" href="/anyoatdisenyotest2/uploads/favicon.ico">
+    <link rel="icon" href="/uploads/favicon.ico">
     <meta name="theme-color" content="#2a2620">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Selected Work — Anyo at Disenyo">
@@ -40,7 +39,8 @@
             --s5: 3rem;   --s6: 4.5rem; --s7: 7rem;
             --max: 1180px;
             --gutter: clamp(1.15rem, 4vw, 2.5rem);
-            --hairline: rgba(138,106,77,.35); /* walnut, low opacity */
+            --hairline: rgba(138,106,77,.5); /* walnut hairline — visible warm rule */
+            --link:     #54562f;   /* darkened moss for AA-contrast body links */
             --header-h: 70px;
         }
 
@@ -70,7 +70,7 @@
         }
         p { margin: 0 0 1.15em; }
         p:last-child { margin-bottom: 0; }
-        a { color: var(--moss); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+        a { color: var(--link); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
         a:hover { color: var(--olive); }
         img { max-width: 100%; height: auto; display: block; }
         strong { font-weight: 600; }
@@ -146,10 +146,10 @@
         a.text-link {
             font-family: var(--sans); font-weight: 600; font-size: .9rem;
             text-transform: uppercase; letter-spacing: .08em;
-            text-decoration: none; color: var(--moss);
-            border-bottom: 1.5px solid var(--moss); padding-bottom: 2px;
+            text-decoration: none; color: var(--link);
+            border-bottom: 1.5px solid var(--link); padding-bottom: 2px;
         }
-        a.text-link:hover { color: var(--olive); border-color: var(--olive); }
+        a.text-link:hover { color: var(--moss); border-color: var(--moss); }
 
         /* ---- skip link ---- */
         .skip-link {
@@ -348,7 +348,7 @@
     .intro-line { max-width: 52ch; }
     .work-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-top: 2.75rem; }
     .work-item { min-width: 0; }
-    .work-item .frame { overflow: hidden; border-radius: 3px; background: var(--sand); box-shadow: 10px 12px 0 -2px rgba(138,106,77,.18); }
+    .work-item .frame { overflow: hidden; border-radius: 3px; background: var(--sand); box-shadow: 10px 12px 0 -2px rgba(138,106,77,.32); }
     .work-item img { width: 100%; object-fit: cover; aspect-ratio: 4/3; transition: transform .45s ease; display: block; }
     .work-item:hover img { transform: scale(1.04); }
     .work-cap { margin-top: .85rem; }
@@ -374,19 +374,12 @@
         .cta-split .callout { transform: translateX(-44px); position: relative; z-index: 3; }
     }
 </style>
-
-<link rel="canonical" href="https://robertobendi.github.io/anyoatdisenyotest2/work">
-<meta property="og:url" content="https://robertobendi.github.io/anyoatdisenyotest2/work">
-<meta property="og:site_name" content="Anyoatdisenyotest2">
-<meta property="og:image" content="https://robertobendi.github.io/anyoatdisenyotest2/uploads/logo.jpg">
-<meta name="twitter:image" content="https://robertobendi.github.io/anyoatdisenyotest2/uploads/logo.jpg">
-<meta name="twitter:card" content="summary_large_image">
 </head>
 <body class="">
     <a href="#main" class="skip-link">Skip to content</a>
     <header class="site-header" id="siteHeader">
-        <a class="brand" href="/anyoatdisenyotest2/" aria-label="Anyo at Disenyo — home">
-            <span class="brand-mark"><img width="500" height="500" src="/anyoatdisenyotest2/uploads/logo.jpg" alt="Anyo at Disenyo interlocking 'ad' loop monogram"></span>
+        <a class="brand" href="/" aria-label="Anyo at Disenyo — home">
+            <span class="brand-mark"><img src="/uploads/logo.jpg" alt="Anyo at Disenyo interlocking 'ad' loop monogram"></span>
             <span class="brand-name">Anyo at Disenyo</span>
         </a>
         <div class="nav-wrap">
@@ -394,21 +387,21 @@
                 <span class="bars" aria-hidden="true"><span></span></span> Menu
             </button>
             <nav id="primary-nav" class="site-nav" aria-label="Primary">
-                <a href="/anyoatdisenyotest2/work">Work</a>
-                <a href="/anyoatdisenyotest2/services">Services</a>
-                <a href="/anyoatdisenyotest2/about">About</a>
-                <a href="/anyoatdisenyotest2/contact">Contact</a>
-                <a href="/anyoatdisenyotest2/contact" class="pill nav-cta-mobile">Get Your Brief <span class="arrow" aria-hidden="true">&rarr;</span></a>
+                <a href="/work">Work</a>
+                <a href="/services">Services</a>
+                <a href="/about">About</a>
+                <a href="/contact">Contact</a>
+                <a href="/contact" class="pill nav-cta-mobile">Get Your Brief <span class="arrow" aria-hidden="true">&rarr;</span></a>
             </nav>
             <span class="nav-cta-wrap">
-                <a href="/anyoatdisenyotest2/contact" class="pill">Get Your Brief <span class="arrow" aria-hidden="true">&rarr;</span></a>
+                <a href="/contact" class="pill">Get Your Brief <span class="arrow" aria-hidden="true">&rarr;</span></a>
             </span>
         </div>
     </header>
 
     <main id="main">
         <section class="hero hero--band hero--drift" aria-label="Selected work">
-    <div class="hero__img"><img width="1920" height="1440" loading="lazy" decoding="async" src="/anyoatdisenyotest2/uploads/ext-jacobs2.jpg" alt="Modern single-storey residence with deep overhanging eaves in daylight"></div>
+    <div class="hero__img"><img src="/uploads/ext-jacobs2.jpg" alt="Modern single-storey residence with deep overhanging eaves in daylight" loading="eager" fetchpriority="high"></div>
     <div class="hero__inner wrap">
         <p class="eyebrow hero__eyebrow">The portfolio</p>
         <h1>Selected Work</h1>
@@ -423,27 +416,27 @@
 
                 <div class="work-grid">
             <article class="work-item wk-4 reveal">
-                <div class="frame"><img width="1920" height="1440" loading="lazy" decoding="async" src="/anyoatdisenyotest2/uploads/ext-jacobs1.jpg" alt="Single-storey home with deep eaves and a brick-and-timber facade in Batangas"></div>
+                <div class="frame"><img src="/uploads/ext-jacobs1.jpg" alt="Single-storey home with deep eaves and a brick-and-timber facade in Batangas"></div>
                 <div class="work-cap"><span class="name">Hillside Family Residence</span><span class="meta">Residential · Batangas City · 2023</span><p>A compact three-bedroom home stepped into a sloping lot, with deep eaves for the afternoon sun.</p></div>
             </article>
             <article class="work-item wk-2 reveal">
-                <div class="frame"><img width="1920" height="1281" loading="lazy" decoding="async" src="/anyoatdisenyotest2/uploads/int-living.jpg" alt="Bright open-plan living room opening onto a garden"></div>
+                <div class="frame"><img src="/uploads/int-living.jpg" alt="Bright open-plan living room opening onto a garden"></div>
                 <div class="work-cap"><span class="name">Open-Plan Interior</span><span class="meta">Residential · Lipa · 2024</span></div>
             </article>
             <article class="work-item wk-3 reveal">
-                <div class="frame"><img width="1920" height="1440" loading="lazy" decoding="async" src="/anyoatdisenyotest2/uploads/ext-schweiker.jpg" alt="Low modern house and detached studio among mature trees"></div>
+                <div class="frame"><img src="/uploads/ext-schweiker.jpg" alt="Low modern house and detached studio among mature trees"></div>
                 <div class="work-cap"><span class="name">Studio &amp; Annex</span><span class="meta">Renovation · Batangas City · 2022</span><p>A detached work studio added to an existing family home, matched to the original rooflines.</p></div>
             </article>
             <article class="work-item wk-3 reveal">
-                <div class="frame"><img width="1920" height="1440" loading="lazy" decoding="async" src="/anyoatdisenyotest2/uploads/int-kitchen.jpg" alt="Warm wooden kitchen with built-in cabinetry"></div>
+                <div class="frame"><img src="/uploads/int-kitchen.jpg" alt="Warm wooden kitchen with built-in cabinetry"></div>
                 <div class="work-cap"><span class="name">Kitchen &amp; Dining Remodel</span><span class="meta">Renovation · Bauan · 2023</span><p>Reworked circulation and daylight for a family that cooks together.</p></div>
             </article>
             <article class="work-item wk-2 reveal">
-                <div class="frame"><img width="1920" height="2560" loading="lazy" decoding="async" src="/anyoatdisenyotest2/uploads/ext-jacobs3.jpg" alt="Residence exterior detail with timber and masonry"></div>
+                <div class="frame"><img src="/uploads/ext-jacobs3.jpg" alt="Residence exterior detail with timber and masonry"></div>
                 <div class="work-cap"><span class="name">Corner Lot House</span><span class="meta">Residential · Batangas · 2021</span></div>
             </article>
             <article class="work-item wk-4 reveal">
-                <div class="frame"><img width="1920" height="2560" loading="lazy" decoding="async" src="/anyoatdisenyotest2/uploads/int-hallway.jpg" alt="Sunlit hallway with wooden walls leading deeper into the home"></div>
+                <div class="frame"><img src="/uploads/int-hallway.jpg" alt="Sunlit hallway with wooden walls leading deeper into the home"></div>
                 <div class="work-cap"><span class="name">Coastal Weekend House</span><span class="meta">Residential · Mabini · 2024</span><p>A simple, breezy plan organised around a central sunlit spine.</p></div>
             </article>
         </div>
@@ -452,7 +445,7 @@
 
 <!-- full-bleed mid-page band -->
 <section class="band reveal" aria-label="Timber ceiling photograph">
-    <img width="520" height="640" loading="lazy" decoding="async" src="/anyoatdisenyotest2/uploads/ceiling-timber.jpg" alt="Warm timber-framed vaulted ceiling seen from below">
+    <img src="/uploads/ceiling-timber.jpg" alt="Warm timber-framed vaulted ceiling seen from below">
     <div class="wrap">
         <p class="band__cap"><span class="eyebrow">Drawn to be built</span>Good structure should be worth looking up at.</p>
     </div>
@@ -470,7 +463,7 @@
             <p class="eyebrow eyebrow--light">Start here</p>
             <p class="callout__lead">Tell us about your site.</p>
             <p>Lot size, location, budget range, and what you'd love to build.</p>
-            <p style="margin-top:1.3rem;"><a class="pill" href="/anyoatdisenyotest2/contact">Get Your Brief <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+            <p style="margin-top:1.3rem;"><a class="pill" href="/contact">Get Your Brief <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
         </aside>
     </div>
 </section>
@@ -480,7 +473,7 @@
         <div class="wrap">
             <div class="footer-grid">
                 <div class="footer-logo">
-                    <img loading="lazy" decoding="async" src="/anyoatdisenyotest2/uploads/logo.jpg" width="170" height="170" alt="Anyo at Disenyo — Architectural Services full logo lock-up">
+                    <img src="/uploads/logo.jpg" width="170" height="170" alt="Anyo at Disenyo — Architectural Services full logo lock-up">
                     <p class="footer-tag">anyo at disenyo — form and design. Architectural services rooted in Batangas City.</p>
                 </div>
                 <div class="footer-col">
@@ -488,22 +481,21 @@
                     <address>
                         Batangas City, Philippines<br>
                         <a href="https://www.facebook.com/anyoatdisenyo" target="_blank" rel="noopener">facebook.com/anyoatdisenyo</a>
-                        <!-- TODO: add the firm's real phone + email here once verified -->
                     </address>
                     <p style="color:#b7a98f;font-size:.85rem;">Send your project brief and we'll reply with next steps.</p>
                 </div>
                 <div class="footer-col">
                     <h3>Explore</h3>
-                    <a href="/anyoatdisenyotest2/work">Selected Work</a>
-                    <a href="/anyoatdisenyotest2/services">Services</a>
-                    <a href="/anyoatdisenyotest2/about">About the Practice</a>
-                    <a href="/anyoatdisenyotest2/contact">Start Your Build</a>
+                    <a href="/work">Selected Work</a>
+                    <a href="/services">Services</a>
+                    <a href="/about">About the Practice</a>
+                    <a href="/contact">Start Your Build</a>
                 </div>
             </div>
             <div class="footer-bottom">
                 <span>© 2026 Anyo at Disenyo — Architectural Services.</span>
                 <span>PRC-licensed architectural practice · Batangas City, PH</span>
-                                <a href="/anyoatdisenyotest2/404" rel="nofollow" aria-hidden="true" tabindex="-1" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;">Page not found</a>
+                                <a href="/404" rel="nofollow" aria-hidden="true" tabindex="-1" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;">Page not found</a>
             </div>
         </div>
     </footer>

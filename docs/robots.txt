@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin
 Disallow: /install
 
-Sitemap: https://robertobendi.github.io/anyoatdisenyotest2/sitemap.xml
+Sitemap: http://127.0.0.1:53170/sitemap.xml

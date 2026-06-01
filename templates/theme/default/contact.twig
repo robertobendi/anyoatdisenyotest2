@@ -10,6 +10,9 @@
 
     .brief-form .field { margin-bottom: 1.7rem; }
     .brief-form .lbl { display: block; font-family: var(--sans); font-weight: 600; font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; color: var(--taupe); margin-bottom: .5rem; }
+    .brief-form .req { color: var(--walnut); margin-left: .15em; }
+    .brief-form .req-legend { font-size: .8rem; color: var(--ink-soft); margin: 0 0 1.5rem; }
+    .brief-form .req-legend .req { font-weight: 700; }
     .brief-form input,
     .brief-form select,
     .brief-form textarea {
@@ -35,6 +38,13 @@
     .contact-card .rval a:hover { text-decoration: underline; text-underline-offset: 3px; }
     .contact-card address { font-style: normal; }
 
+    /* warm, stronger bottom-left scrim — keeps the hero in the warm photo-poster family */
+    .hero::after {
+        background:
+            linear-gradient(180deg, rgba(30,26,21,.30) 0%, rgba(30,26,21,0) 34%, rgba(30,26,21,.40) 60%, rgba(30,26,21,.84) 100%),
+            linear-gradient(80deg, rgba(30,26,21,.56) 0%, rgba(30,26,21,.12) 46%, rgba(30,26,21,0) 70%);
+    }
+
     @media (min-width: 860px) {
         .contact-grid { grid-template-columns: 1.15fr 360px; gap: 4rem; }
         .contact-card { transform: translateX(-44px); position: relative; z-index: 3; margin-top: 1.5rem; }
@@ -44,7 +54,7 @@
 
 {% block content %}
 <section class="hero hero--band hero--drift" aria-label="Contact">
-    <div class="hero__img"><img src="/uploads/ext-dusk.jpg" alt="A nearly finished home glowing warmly in the evening"></div>
+    <div class="hero__img"><img src="/uploads/ext-jacobs3.jpg" alt="A finished timber-and-masonry home set among trees in warm daylight" loading="eager" fetchpriority="high"></div>
     <div class="hero__inner wrap">
         <p class="eyebrow hero__eyebrow">Magpasimula · Get started</p>
         <h1>Start Your Build</h1>
@@ -62,12 +72,13 @@
             <!-- TODO: replace REPLACE_ME with the firm's real Formspree form ID (https://formspree.io/f/xxxxxxxx).
                  Until then the Facebook link in the card beside this form is the working way to reach us. -->
             <form class="brief-form" action="https://formspree.io/f/REPLACE_ME" method="POST">
+                <p class="req-legend"><span class="req">*</span> required</p>
                 <div class="field">
-                    <label class="lbl" for="f-name">Your name</label>
+                    <label class="lbl" for="f-name">Your name <span class="req" aria-hidden="true">*</span></label>
                     <input id="f-name" name="name" type="text" required autocomplete="name" placeholder="Juan dela Cruz">
                 </div>
                 <div class="field">
-                    <label class="lbl" for="f-contact">Contact number</label>
+                    <label class="lbl" for="f-contact">Contact number <span class="req" aria-hidden="true">*</span></label>
                     <input id="f-contact" name="contact" type="text" required autocomplete="tel" inputmode="tel" placeholder="So we can reply quickly">
                 </div>
                 <div class="field">
@@ -85,7 +96,7 @@
                     </select>
                 </div>
                 <div class="field">
-                    <label class="lbl" for="f-message">About your project</label>
+                    <label class="lbl" for="f-message">About your project <span class="req" aria-hidden="true">*</span></label>
                     <textarea id="f-message" name="message" required placeholder="Your lot size, rough budget, and what you'd love to build."></textarea>
                 </div>
                 <input type="text" name="_hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;">
@@ -115,7 +126,6 @@
                     <span class="rval"><a href="https://www.openstreetmap.org/?mlat=13.7565&mlon=121.0583#map=13/13.7565/121.0583" target="_blank" rel="noopener">Open in OpenStreetMap</a></span>
                 </div>
             </address>
-            <!-- TODO: add the firm's verified phone, email, and opening hours here once confirmed. -->
             <p style="color:#d8cfc0; font-size:.92rem; margin:1.5rem 0 1.4rem;">We usually reply within a day. Tell us your timeline and we'll work to it.</p>
             <a class="pill" href="https://www.facebook.com/anyoatdisenyo" target="_blank" rel="noopener">Message on Facebook <span class="arrow" aria-hidden="true">&rarr;</span></a>
         </aside>

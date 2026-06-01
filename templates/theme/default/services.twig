@@ -12,7 +12,7 @@
     .svc-block h3 { margin: 0 0 .6rem; font-size: clamp(1.4rem,2.4vw,1.75rem); }
     .svc-block p { color: var(--ink-soft); margin: 0; }
     .duo { position: relative; background: var(--walnut); overflow: hidden; border-radius: 3px; }
-    .duo::after { content: ""; position: absolute; inset: 0; background: var(--moss); mix-blend-mode: color; opacity: .28; pointer-events: none; }
+    .duo::after { content: ""; position: absolute; inset: 0; background: var(--walnut); mix-blend-mode: color; opacity: .5; pointer-events: none; }
     .duo img { width: 100%; aspect-ratio: 3/2; object-fit: cover; display: block; filter: grayscale(1) contrast(1.08) brightness(1.04); mix-blend-mode: screen; opacity: .92; }
 
     .steps { display: grid; grid-template-columns: 1fr; gap: 2.5rem; margin-top: 2.75rem; }
@@ -37,7 +37,7 @@
 
 {% block content %}
 <section class="hero hero--band hero--drift" aria-label="Services">
-    <div class="hero__img"><img src="/uploads/int-studio.jpg" alt="Architect's studio with a drawing table and warm wood walls"></div>
+    <div class="hero__img"><img src="/uploads/int-studio.jpg" alt="Architect's studio with a drawing table and warm wood walls" loading="eager" fetchpriority="high"></div>
     <div class="hero__inner wrap">
         <p class="eyebrow hero__eyebrow">Scope &amp; process</p>
         <h1>What We Do</h1>

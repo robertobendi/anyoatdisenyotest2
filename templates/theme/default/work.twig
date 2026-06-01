@@ -9,7 +9,7 @@
     .intro-line { max-width: 52ch; }
     .work-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-top: 2.75rem; }
     .work-item { min-width: 0; }
-    .work-item .frame { overflow: hidden; border-radius: 3px; background: var(--sand); box-shadow: 10px 12px 0 -2px rgba(138,106,77,.18); }
+    .work-item .frame { overflow: hidden; border-radius: 3px; background: var(--sand); box-shadow: 10px 12px 0 -2px rgba(138,106,77,.32); }
     .work-item img { width: 100%; object-fit: cover; aspect-ratio: 4/3; transition: transform .45s ease; display: block; }
     .work-item:hover img { transform: scale(1.04); }
     .work-cap { margin-top: .85rem; }
@@ -39,7 +39,7 @@
 
 {% block content %}
 <section class="hero hero--band hero--drift" aria-label="Selected work">
-    <div class="hero__img"><img src="/uploads/ext-jacobs2.jpg" alt="Modern single-storey residence with deep overhanging eaves in daylight"></div>
+    <div class="hero__img"><img src="/uploads/ext-jacobs2.jpg" alt="Modern single-storey residence with deep overhanging eaves in daylight" loading="eager" fetchpriority="high"></div>
     <div class="hero__inner wrap">
         <p class="eyebrow hero__eyebrow">The portfolio</p>
         <h1>Selected Work</h1>

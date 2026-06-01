@@ -11,6 +11,13 @@
     .about-logo img { width: clamp(150px, 30vw, 210px); height: auto; }
     .about-intro .lead { margin: 0; }
 
+    /* warm, stronger bottom-left scrim so "FORM, THEN DESIGN" is the single focal point */
+    .hero::after {
+        background:
+            linear-gradient(180deg, rgba(30,26,21,.32) 0%, rgba(30,26,21,0) 34%, rgba(30,26,21,.42) 60%, rgba(30,26,21,.86) 100%),
+            linear-gradient(80deg, rgba(30,26,21,.58) 0%, rgba(30,26,21,.12) 46%, rgba(30,26,21,0) 70%);
+    }
+
     .principal { display: grid; grid-template-columns: 1fr; gap: 2.25rem; align-items: center; }
     .principal .frame { overflow: hidden; border-radius: 3px; background: var(--sand); box-shadow: 12px 14px 0 -2px rgba(138,106,77,.20); }
     .principal img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; }
@@ -31,7 +38,7 @@
 
 {% block content %}
 <section class="hero hero--band hero--drift" aria-label="About the practice">
-    <div class="hero__img"><img src="/uploads/int-bedroom.jpg" alt="Quiet, warmly lit room with timber walls and soft daylight"></div>
+    <div class="hero__img"><img src="/uploads/int-hallway.jpg" alt="Warm timber-lined hallway with full-height windows receding into soft daylight" loading="eager" fetchpriority="high"></div>
     <div class="hero__inner wrap">
         <p class="eyebrow hero__eyebrow">The practice</p>
         <h1>Form, Then Design</h1>

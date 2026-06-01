@@ -35,8 +35,8 @@
 
     .feat-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 1rem; }
     .feat-grid { display: grid; grid-template-columns: 1fr; gap: 1.75rem; margin-top: 2.5rem; }
-    .feat-card { background: var(--sand); padding: 12px 12px 1.1rem; border-radius: 3px; box-shadow: 12px 14px 0 -2px rgba(138,106,77,.20); transition: transform .18s ease, box-shadow .18s ease; text-decoration: none; color: inherit; display: block; }
-    .feat-card:hover { transform: translate(-2px,-2px); box-shadow: 16px 18px 0 -2px rgba(138,106,77,.28); }
+    .feat-card { background: var(--sand); padding: 12px 12px 1.1rem; border-radius: 3px; box-shadow: 12px 14px 0 -2px rgba(138,106,77,.34); transition: transform .18s ease, box-shadow .18s ease; text-decoration: none; color: inherit; display: block; }
+    .feat-card:hover { transform: translate(-2px,-2px); box-shadow: 16px 18px 0 -2px rgba(138,106,77,.46); }
     .feat-card .frame { overflow: hidden; border-radius: 2px; display: block; }
     .feat-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; transition: transform .4s ease; }
     .feat-card:hover img { transform: scale(1.04); }
@@ -81,7 +81,7 @@
 
 {% block content %}
 <section class="hero hero--drift" aria-label="Introduction">
-    <div class="hero__img"><img src="/uploads/hero-home.jpg" alt="Warm, light-filled living room with wooden paneling under a high ceiling"></div>
+    <div class="hero__img"><img src="/uploads/hero-home.jpg" alt="Warm, light-filled living room with wooden paneling under a high ceiling" loading="eager" fetchpriority="high"></div>
     <div class="hero__inner wrap">
         <p class="eyebrow hero__eyebrow">Architectural Services · Batangas City</p>
         <h1>WE SHAPE THE HOME YOU'LL LIVE IN</h1>
@@ -164,7 +164,7 @@
 
 <!-- mid-page full-bleed band with Fraunces caption -->
 <section class="band reveal" aria-label="Featured photograph">
-    <img src="/uploads/ext-dusk.jpg" alt="Modern home glowing warmly at dusk through large windows">
+    <img src="/uploads/int-kitchen.jpg" alt="Warm kitchen with timber millwork and exposed brick in golden afternoon light">
     <div class="wrap">
         <p class="band__cap"><span class="eyebrow">On the boards in Batangas</span>Concrete, timber, and warm light — drawn for the way you actually live.</p>
     </div>
