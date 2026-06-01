@@ -39,7 +39,7 @@
             --s1: .5rem;  --s2: 1rem;  --s3: 1.5rem;  --s4: 2rem;
             --s5: 3rem;   --s6: 4.5rem; --s7: 7rem;
             --max: 1180px;
-            --gutter: clamp(1.15rem, 4vw, 2.5rem);
+            --gutter: clamp(1.35rem, 4vw, 2.5rem);
             --hairline: rgba(138,106,77,.5); /* walnut hairline — visible warm rule */
             --link:     #54562f;   /* darkened moss for AA-contrast body links */
             --header-h: 70px;
@@ -280,7 +280,7 @@
             content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
             background: linear-gradient(180deg, rgba(20,18,15,.18) 0%, rgba(20,18,15,0) 32%, rgba(20,18,15,.18) 60%, rgba(20,18,15,.72) 100%);
         }
-        .hero__inner { padding: 0 0 clamp(2.5rem, 6vw, 4.5rem); width: 100%; }
+        .hero__inner { padding-block: 0 clamp(2.5rem, 6vw, 4.5rem); width: 100%; }
         .hero__eyebrow { color: var(--paper); opacity: .92; letter-spacing: .14em; }
         .hero h1 {
             font-family: var(--display); text-transform: uppercase;
