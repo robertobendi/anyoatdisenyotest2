@@ -187,22 +187,18 @@
         body.no-hero .site-header::before { opacity: 0; }
         body.no-hero .site-nav a, body.no-hero .menu-toggle { color: var(--espresso); }
 
-        /* brand lock-up: monogram badge + two-line wordmark */
-        .brand { display: flex; align-items: center; gap: .7rem; text-decoration: none; }
+        /* brand lock-up: transparent CSS-masked monogram (recolours with header state) + wordmark */
+        .brand { display: flex; align-items: center; gap: .62rem; text-decoration: none; }
         .brand-mark {
-            position: relative; width: 90px; height: 50px; flex: none;
-            border-radius: 11px; overflow: hidden; isolation: isolate;
-            background: var(--paper);
-            box-shadow: inset 0 0 0 1px var(--hairline), 0 2px 9px rgba(42,38,32,.16);
-            transition: box-shadow .25s ease;
+            width: 64px; height: 38px; flex: none;
+            background-color: var(--paper);
+            -webkit-mask: url(/anyoatdisenyotest2/uploads/logo-mark.png) center / contain no-repeat;
+                    mask: url(/anyoatdisenyotest2/uploads/logo-mark.png) center / contain no-repeat;
+            filter: drop-shadow(0 1px 3px rgba(0,0,0,.30));
+            transition: background-color .25s ease, filter .25s ease;
         }
-        .brand-mark img {
-            position: absolute; max-width: none;
-            width: 114px; height: 114px; left: -12px; top: -24px;
-            mix-blend-mode: multiply;
-        }
-        .site-header.scrolled .brand-mark { box-shadow: inset 0 0 0 1px var(--hairline), 0 1px 4px rgba(42,38,32,.10); }
-        .brand:hover .brand-mark { box-shadow: inset 0 0 0 1px var(--walnut), 0 5px 14px rgba(42,38,32,.20); }
+        .site-header.scrolled .brand-mark, body.no-hero .brand-mark { background-color: var(--moss); filter: none; }
+        .brand:hover .brand-mark { background-color: var(--olive); }
 
         .brand-text { display: flex; flex-direction: column; line-height: 1.04; }
         .brand-text .nm {
@@ -314,10 +310,12 @@
             display: grid; gap: clamp(2rem, 5vw, 4rem);
             grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) minmax(0, 1fr);
         }
-        .footer-logo img {
-            width: clamp(132px, 28vw, 156px); height: auto;
-            background: var(--paper); border-radius: 14px; padding: 16px 18px;
-            box-shadow: 0 12px 32px rgba(0,0,0,.24);
+        .footer-logo-mark {
+            display: block; width: clamp(154px, 32vw, 190px);
+            aspect-ratio: 430 / 324;
+            background-color: var(--paper);
+            -webkit-mask: url(/anyoatdisenyotest2/uploads/logo-full.png) left center / contain no-repeat;
+                    mask: url(/anyoatdisenyotest2/uploads/logo-full.png) left center / contain no-repeat;
         }
         .footer-tag { margin-top: 1.1rem; font-family: var(--serif); font-size: 1.05rem; color: var(--sand); max-width: 30ch; }
         .footer-col h3 {
@@ -379,7 +377,7 @@
     <a href="#main" class="skip-link">Skip to content</a>
     <header class="site-header" id="siteHeader">
         <a class="brand" href="/anyoatdisenyotest2/" aria-label="Anyo at Disenyo — home">
-            <span class="brand-mark"><img width="500" height="500" src="/anyoatdisenyotest2/uploads/logo.jpg" alt="Anyo at Disenyo interlocking 'ad' loop monogram"></span>
+            <span class="brand-mark" aria-hidden="true"></span>
             <span class="brand-text">
                 <span class="nm">Anyo at Disenyo</span>
                 <span class="sub">Architectural Services</span>
@@ -421,7 +419,7 @@
         <div class="wrap">
             <div class="footer-grid">
                 <div class="footer-logo">
-                    <img loading="lazy" decoding="async" src="/anyoatdisenyotest2/uploads/logo.jpg" width="170" height="170" alt="Anyo at Disenyo — Architectural Services full logo lock-up">
+                    <span class="footer-logo-mark" role="img" aria-label="Anyo at Disenyo — Architectural Services"></span>
                     <p class="footer-tag">anyo at disenyo — form and design. Architectural services rooted in Batangas City.</p>
                 </div>
                 <div class="footer-col">
