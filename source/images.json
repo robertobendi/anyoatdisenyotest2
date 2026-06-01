@@ -1,0 +1,9 @@
+{
+  "all": [
+    "images/og-image.jpg",
+    "images/favicon.ico"
+  ],
+  "favicon": "images/favicon.ico",
+  "inline": [],
+  "og_image": "images/og-image.jpg"
+}
